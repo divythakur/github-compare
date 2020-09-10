@@ -15,7 +15,7 @@ const [biodata,setbiodata] =useState([]);
 const [sortedBioData,setsortedbiodata] =useState([]);
 
    const load=(e)=>{
-       axios.get(`https://api.github.com/users/${searchkeyword}`).
+       axios.get(`https://cors-anywhere.herokuapp.com/https://api.github.com/users/${searchkeyword}`).
        then((response)=>setbiodata((biodata)=>[...biodata,response.data])).catch((err)=>console.log(err.message))
        e.preventDefault();
        inputchange("");
